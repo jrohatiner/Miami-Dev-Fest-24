@@ -1,24 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>DevFest24 Resources</title>
+   <meta charset="UTF-8">
+   <title>DevFest Pub Sub Resources</title>
 </head>
-  <style>
-    body {
-   margin: auto;
-}
-iframe {
-   min-width: 100%;
-   margin-left: 30%;
-   border: none;
-}
-  </style>
+
 <body>
-<div class="container">
-   <iframe src="https://docs.google.com/document/d/e/2PACX-1vQ8T9ejpAC2IsxRRUQa7W07hBeYpGzKl04W5yEw2ytCgjbcYuuOs386-2FtQn9S64cyhRnHMjA3SjjO/pub?embedded=true"></iframe>
-</div>
+   <style>
+      body {
+         margin: auto;
+         display: flex;
+         align-items: center;
+         height: 100vh;
+         width: 100vw;
+         margin: 0;
+      }
 
-</body>
+      iframe {
+         min-width: 100%;
+         border: none;
+      }
+
+      .download-btn {
+         display: flex;
+         padding: 15px 40px;
+         margin-bottom: 30px;
+         font-size: 16px;
+         text-align: center;
+         color: #fff;
+         background-color: #007bff;
+         text-decoration: none;
+         border-radius: 5px;
+         transition: background-color 0.3s ease;
+         margin-left: 30%;
+         position: sticky;
+         top: 0;
+      }
+
+      .download-btn:hover {
+         background-color: #0056b3;
+      }
+
+      .FlexContainer {
+         display: flex;
+         flex-wrap: nowrap;
+         justify-content: center;
+         align-items: stretch;
+         width: 70%;
+         height: 80vh;
+         overflow: auto;
+      }
+
+      .FlexContainer div {
+         width: 300px;
+         height: 100px;
+      }
+   </style>
+
+   <body>
+      <section class='FlexContainer'>
+         <div>
+            <!-- Download Button -->
+            <a id="downloadBtn" class="download-btn" href="#" download="https://docs.google.com/document/d/e/2PACX-1vQ8T9ejpAC2IsxRRUQa7W07hBeYpGzKl04W5yEw2ytCgjbcYuuOs386-2FtQn9S64cyhRnHMjA3SjjO/pub">Download File Here</a>
+            <iframe src="https://docs.google.com/document/d/e/2PACX-1vQ8T9ejpAC2IsxRRUQa7W07hBeYpGzKl04W5yEw2ytCgjbcYuuOs386-2FtQn9S64cyhRnHMjA3SjjO/pub?embedded=true" width="1200" height="800"></iframe>
+         </div>
+      </section>
+
+      <script>
+         const downloadBtn = document.getElementById("downloadBtn");
+         // Create a text file and attach it to the button
+         const fileContent = "Hello, this is your downloaded file!";
+         const blob = new Blob([fileContent], {
+            type: "text/plain"
+         });
+         const url = URL.createObjectURL(blob);
+         // Set the download link dynamically
+         downloadBtn.href = url;
+         downloadBtn.download =
+            "https://docs.google.com/document/d/e/2PACX-1vQ8T9ejpAC2IsxRRUQa7W07hBeYpGzKl04W5yEw2ytCgjbcYuuOs386-2FtQn9S64cyhRnHMjA3SjjO/pub";
+      </script>
+   </body>
 </html>
-
-
